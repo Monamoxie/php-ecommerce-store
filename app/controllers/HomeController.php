@@ -1,4 +1,6 @@
 <?php
+ 
+
 class HomeController extends Controller 
 {
     private $user;
@@ -36,7 +38,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function rate( $retType,   $product_Id,  $rating)
+    public function rate(int $retType, int $product_Id,  int $rating):array
     {
         
         $existing_Ratings = $this->product->getProductRating($product_Id);

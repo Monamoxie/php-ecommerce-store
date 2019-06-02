@@ -1,4 +1,5 @@
 <?php
+   
 class Session 
 { 
     public function checkSession($name)

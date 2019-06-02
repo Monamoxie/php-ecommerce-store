@@ -1,4 +1,6 @@
 <?php
+ 
+
 class Product extends Model 
 {   
     private $rows; 
@@ -15,7 +17,7 @@ class Product extends Model
         return $this->rows; 
     }
 
-    public function getSingleProduct($id) 
+    public function getSingleProduct(int $id) 
     {
         $this->db->runQuery("SELECT * FROM products WHERE id = '$id' ");
         if ($this->db->numRows() > 0) { 
@@ -25,7 +27,7 @@ class Product extends Model
         return false;
     }
 
-    public function getSingleProductPrice($id)
+    public function getSingleProductPrice(int $id)
     {
         $this->db->runQuery("SELECT price FROM products WHERE id = '$id' ");
         if ($this->db->numRows() > 0) { 
@@ -49,7 +51,7 @@ class Product extends Model
         return $this->rows;
     }
 
-    public function updateProductRating($product_Id, $existing_Ratings, $new_Rating) 
+    public function updateProductRating(int $product_Id, array $existing_Ratings, int $new_Rating) 
     {
         $new_Total_Rate_Points = $existing_Ratings["total_rate_points"] + $new_Rating;
         $new_Total_Raters = $existing_Ratings["total_raters"] + 1;

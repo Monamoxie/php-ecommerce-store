@@ -55,7 +55,7 @@
                                         </div>
 
 
-                                        <div class="demo_list-my-ratings" id="demo_list-my-ratings-"'.$row["id"].'>';
+                                        <div class="demo_list-my-ratings" id="demo_list-my-ratings-'.$row["id"].'">';
                                         if ( count($data["prev_rated"]) > 0 && array_key_exists($row["id"], $data["prev_rated"]) ) 
                                         {
                                             echo '<span class="float-left demo_list-rating-info2" >';
@@ -90,7 +90,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                    <h2> ENJOY THE ABC EXPERIENCE</h2> 
+                    <h2> ENJOY THE DEMO EXPERIENCE</h2> 
                     <h5>  WITH THE DEMO STORE  </h5>
                     <p> 
                         <a href="cart"><button type="button" class="btn btn-warning btn-lg">View Cart</button></a>

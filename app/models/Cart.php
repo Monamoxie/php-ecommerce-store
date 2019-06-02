@@ -1,8 +1,9 @@
 <?php
+ 
 class Cart extends Model 
 {   
  
-    public function checkCart($product_Id)
+    public function checkCart(int $product_Id):bool
     {   
         if (!$this->session->checkCart($product_Id)) 
         {
@@ -17,10 +18,10 @@ class Cart extends Model
         {
             return $this->session->getAllCarts();
         } 
-        return false;
+        return [];
     }
 
-    public function saveCart($product_Id)
+    public function saveCart(int $product_Id):bool
     {
         if ($this->session->saveCart($product_Id))
         {
@@ -29,7 +30,7 @@ class Cart extends Model
         return false;
     }
 
-    public function updateCart($product_Id, $quantity)
+    public function updateCart(int $product_Id, int $quantity):bool
     { 
 
         if ($this->session->updateCart($product_Id, $quantity))
@@ -39,7 +40,7 @@ class Cart extends Model
         return false;
     }
 
-    public function removeCartItem($product_Id)
+    public function removeCartItem(int $product_Id)
     {
         return $this->session->removeCartItem($product_Id);
     }
@@ -60,7 +61,7 @@ class Cart extends Model
         return $this->session->countAllCarts();
     }
 
-    public function countUniqueCartQty($product_Id)
+    public function countUniqueCartQty(int $product_Id)
     {   
         return $this->session->countUniqueCartQty($product_Id);
     }

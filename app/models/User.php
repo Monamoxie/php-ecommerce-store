@@ -1,8 +1,9 @@
 <?php
+ 
+
 class User extends Model 
 {   
-    protected $user_Id;
-    // protected $session;
+    protected $user_Id; 
 
     public function __construct() 
     {  

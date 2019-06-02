@@ -1,4 +1,5 @@
 <?php
+ 
 class CartController extends Controller 
 {
     private $user, $product, $cart;
@@ -59,7 +60,7 @@ class CartController extends Controller
         )); exit();
     }
 
-    public function removeCart($retType, $product_Id)
+    public function removeCart(int $retType, int $product_Id):array
     {
          
         if ( $this->cart->removeCartItem($product_Id) )
@@ -79,7 +80,7 @@ class CartController extends Controller
         }
     }
 
-    public function computeCartCost($cart_Records)
+    public function computeCartCost(array $cart_Records)
     {
         $total_Cost = 0;
         $i = 0;
@@ -105,7 +106,7 @@ class CartController extends Controller
         ]);
      }
 
-     public function checkout($retType, $product_Id,  $pick_up_type )
+     public function checkout(int $retType, int $product_Id, string $pick_up_type )
      {
         
         $all_Cart_Records = $this->cart->getAllCartRecords();
