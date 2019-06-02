@@ -18,5 +18,7 @@ to show how the Model can effectively wrap and handle data from them.
    localhost/root_url/tables_creator.php
 5. If everything worked as planned, you should see a message informing you table aas successfully created and dummy contents were inserted.
 
+For a DEMO of the functionalities, visit http://demo.hit.ng/
+
 
 ![alt text](public/img/site-overview.png)
