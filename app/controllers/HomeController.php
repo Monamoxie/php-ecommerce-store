@@ -13,10 +13,6 @@ class HomeController extends Controller
 
     public function __construct() 
     {
-        // require APP_ROOT . 'core/Model.php';
-        // require APP_ROOT . 'app/models/User.php';
-        // require APP_ROOT . 'app/models/Product.php';
-        // require APP_ROOT . 'app/models/Cart.php';
         $this->user = new User(); 
         $this->product = new Product(); 
         $this->cart = new Cart();  

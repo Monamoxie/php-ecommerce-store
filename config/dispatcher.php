@@ -14,16 +14,10 @@ class Dispatcher
     }
 
     public function loadController()
-    {
-        //$coreController = new Core\Controller();
-        // require APP_ROOT . 'core' . '/' . 'Controller.php'; 
+    { 
         $pageController = 'App\\Controllers\\' . ucfirst($this->request->controller) . 'Controller';
-        $controller = new $pageController();
-          
-       // $file = APP_ROOT . 'app/controllers/' . $name . '.php';
-       // require $file;
-       
-       return $controller;
+        $controller = new $pageController(); 
+        return $controller;
     }
 
 }

@@ -3,12 +3,7 @@ namespace Core;
 
 abstract class Controller
  {  
-
-    public function __construct() 
-    {
-       // require_once APP_ROOT . 'core/Model.php';
-    } 
-
+ 
      public function render($filename, $data)
      { 
         /** 
