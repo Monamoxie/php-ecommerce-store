@@ -77,7 +77,7 @@ var home =
             url: self.asyncServiceRoot()+"home/"+action+"/"+parseInt("2")+"/"+parseInt(self.productID)+"/"+self.clickedIndex,
             contentType: 'application/x-www-form-urlencoded',
             success: function (response, status, xhr) { 
-                 
+                //alert(response);
                 switch (action) 
                 {
                     case "rate":

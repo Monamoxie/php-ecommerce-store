@@ -1,4 +1,7 @@
 <?php
+namespace Core;
+use mysqli;
+  
 class Database extends mysqli 
 {
 

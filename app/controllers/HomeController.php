@@ -1,7 +1,11 @@
 <?php
- 
+namespace App\Controllers;
+use Core\Controller; 
+use App\Models\User; 
+use App\Models\Cart; 
+use App\Models\Product; 
 
-class HomeController extends Controller 
+class HomeController extends Controller
 {
     private $user;
     private $product;
@@ -9,10 +13,10 @@ class HomeController extends Controller
 
     public function __construct() 
     {
-        require APP_ROOT . 'core/Model.php';
-        require APP_ROOT . 'app/models/User.php';
-        require APP_ROOT . 'app/models/Product.php';
-        require APP_ROOT . 'app/models/Cart.php';
+        // require APP_ROOT . 'core/Model.php';
+        // require APP_ROOT . 'app/models/User.php';
+        // require APP_ROOT . 'app/models/Product.php';
+        // require APP_ROOT . 'app/models/Cart.php';
         $this->user = new User(); 
         $this->product = new Product(); 
         $this->cart = new Cart();  

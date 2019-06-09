@@ -1,5 +1,6 @@
 <?php
 require_once "config/constants.php"; 
+require_once "autoload.php"; 
 require_once "core/init.php";
 
 $create_Dispatcher = new Dispatcher();

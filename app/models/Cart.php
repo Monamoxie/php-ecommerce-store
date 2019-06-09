@@ -1,5 +1,10 @@
 <?php
- 
+namespace App\Models;
+use Core\Model;
+use App\Models\User; 
+use App\Models\Cart; 
+use App\Models\Product; 
+
 class Cart extends Model 
 {   
  
@@ -12,7 +17,7 @@ class Cart extends Model
         return true;
     }
 
-    public function getAllCartRecords() 
+    public function getAllCartRecords():array
     {
         if ($this->countUniqueCarts() > 0) 
         {
@@ -40,28 +45,28 @@ class Cart extends Model
         return false;
     }
 
-    public function removeCartItem(int $product_Id)
+    public function removeCartItem(int $product_Id):bool
     {
         return $this->session->removeCartItem($product_Id);
     }
 
-    public function removeAllCarts()
+    public function removeAllCarts():bool
     {
         return $this->session->removeAllCarts();
     }
  
 
-    public function countUniqueCarts()
+    public function countUniqueCarts():int
     {
         return $this->session->countUniqueCarts();
     }
 
-    public function countAllCarts()
+    public function countAllCarts():int
     {
         return $this->session->countAllCarts();
     }
 
-    public function countUniqueCartQty(int $product_Id)
+    public function countUniqueCartQty(int $product_Id):int
     {   
         return $this->session->countUniqueCartQty($product_Id);
     }

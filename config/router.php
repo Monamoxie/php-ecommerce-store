@@ -6,6 +6,7 @@ class Router
         $url = trim($url);  
         $kaboom = (MODE === "DEVELOPMENT") ? array_slice(explode('/', $url), 2) : explode('/', $url);
         $urlCount = count($kaboom);
+        //echo $urlCount; exit();
         switch (true) 
         {
             case $urlCount == 0:

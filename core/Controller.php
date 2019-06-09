@@ -1,12 +1,12 @@
 <?php
- 
+namespace Core;  
 
 abstract class Controller
  {  
 
     public function __construct() 
     {
-        require_once APP_ROOT . 'core/Model.php';
+       // require_once APP_ROOT . 'core/Model.php';
     } 
 
      public function render($filename, $data)
@@ -25,7 +25,7 @@ abstract class Controller
         $main_Content = ob_get_clean(); 
 
         // The default layout page 
-         require_once APP_ROOT . 'app/views/templates/layout.php';
+        require_once APP_ROOT . 'app/views/templates/layout.php';
      }
   
  }

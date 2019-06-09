@@ -2,12 +2,12 @@
 define('MODE', 'DEVELOPMENT');
 
 //define("APP_ROOT", dirname(__FILE__) . '/');  
-
-define("APP_ROOT", dirname(__DIR__ ) . '/');
+ 
+define("APP_ROOT", dirname(__DIR__ ) . DIRECTORY_SEPARATOR);
 define("DEVELOPMENT_PUBLIC_FOLDER", "store");
 
 define("URL_ROOT", "https://localhost/store/");
-define('VIEW_ROOT', APP_ROOT . '/app/views/'); 
+define('VIEW_ROOT', APP_ROOT . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR .'views/'); 
 define("SITE_NAME", "Demo Store");
  
 
@@ -27,7 +27,6 @@ define("DOLLAR", "$");
 // USER
 define("USER_ID_TAG", "user_id");
 define("USER_WALLET_TAG", "user_wallet");    
-define("USER_IP", $_SERVER['REMOTE_ADDR']);
 
 //PRODUCT
 define("PRODUCT_RATING_ARR", "product_rate_arr"); 

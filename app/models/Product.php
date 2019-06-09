@@ -1,5 +1,9 @@
 <?php
- 
+namespace App\Models;
+use Core\Model;
+use App\Models\User; 
+use App\Models\Cart; 
+use App\Models\Product; 
 
 class Product extends Model 
 {   
@@ -41,7 +45,7 @@ class Product extends Model
     * @param int
     * @return array
     */
-    public function getProductRating($product_Id)
+    public function getProductRating(int $product_Id)
     {
         $this->rows = [];
         $this->db->runQuery("SELECT total_rate_points, total_raters, average_rating FROM products WHERE id  = '$product_Id' ");
