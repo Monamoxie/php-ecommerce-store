@@ -16,5 +16,9 @@ to show how the Model can effectively wrap and handle data from them.
 4. Next in line is to open up the tables_creator.php file in the root directory and uncomment the echo statement at the bottom.
 4. After that, open your browser and fire up the tables_creator file. You can do that by using 
    localhost/root_url/tables_creator.php
-5. If everything worked as planned, you should see a message informing you table aas successfully created and dummy data were inserted.
+5. If everything worked as planned, you should see a message informing you table aas successfully created and dummy contents were inserted.
 
+For a DEMO of the functionalities, visit http://demo.hit.ng/
+
+
+![alt text](public/img/site-overview.png)
