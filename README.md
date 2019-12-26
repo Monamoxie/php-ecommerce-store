@@ -1,24 +1,28 @@
-# php-ecommerce-store
+![Logo](public/img/logo.png)
+
 A Basic implementation of the MVC Design Pattern with PHP.
-This is only a boilerplate that I built from scratch. It's not intended for production use. 
-For rea life usage, I think you use a more solidified framework like Laravel or Symfony.  But this should give you an idea on how each component can be connected to achieve a common goal. 
+This is only a boilerplate built from scratch, not intended for production use. 
+For rea life usage, use a more structured framework like Laravel or Symfony.  But this should give you an idea on how each layers of the pattern can be connected to achieve a common goal. 
 
-To storage mechanisms were used: 
-* A MySQL Queries
-* PHP Session Variables 
+# Technology Stack 
+* PHP (v7.0+) (Vanilla)
+* MySQL 
+* Javascript (Vanilla)
+ 
 
-to show how the Model can effectively wrap and handle data from them. 
-
-# Installation and Set Up
+#  Set Up Guide
 1. Clone the repo
 2. Create a Mysql Database using any name you wish to use.
 3. Open up the constants.php file within the config file and edit as desired. You can remove or add as you wish.
-4. Next in line is to open up the tables_creator.php file in the root directory and uncomment the echo statement at the bottom.
-4. After that, open your browser and fire up the tables_creator file. You can do that by using 
+4. Open up the tables_creator.php file in the root directory and uncomment the echo statement at the bottom.
+5. Open your browser and fire up the tables_creator file. You can do that by using 
    localhost/root_url/tables_creator.php
-5. If everything worked as planned, you should see a message informing you table aas successfully created and dummy contents were inserted.
+6. If everything worked as planned, you should see a message informing you table was successfully created and dummy contents were inserted.
 
-For a DEMO of the functionalities, visit http://demo.hit.ng/
+# Demo URL
+http://demo.hit.ng/
 
+![alt Image](public/img/site-overview.png)
 
-![alt text](public/img/site-overview.png)
+# License 
+MIT License
