@@ -1,58 +1,59 @@
-var cart = 
-{ 
-    update:function (currElem)
-    { 
-        const self = this; const currWrap = $(currElem).parent();
+var cart = { 
+    update: function(currElem) { 
+        const [self, currWrap] = [this,  $(currElem).parent()];
+        
         self.productID = parseInt( $(currElem).attr('id').replace(/\D/g, '')); 
+
         const updateQty = parseInt($("#input-"+self.productID).val().replace(/\D/g, '')); 
-        if (updateQty < 1 || updateQty === "" || isNaN(updateQty)){
+        
+        if (updateQty < 1 || updateQty === "" || isNaN(updateQty)) {
             $("#demo_modal").modal();  
             $("#demo_modal .modal-body").html('Quantity must not be less than 1 and must be a number');
-            $("#input-"+self.productID).val(1); return false;
+            $("#input-"+self.productID).val(1); 
+            return false;
         }
+
         $(currElem).html('processing').attr('disabled', true);
+        
         self.theTransporter(currWrap, currElem, updateQty, "updateCart");
     },
 
-    remove:function (currElem)
-    { 
-        const self = this; const currWrap = $(currElem).parent();
+    remove: function(currElem) { 
+        const [self, currWrap] = [this, $(currElem).parent()];
+
         self.productID = parseInt( $(currElem).attr('id').replace(/\D/g, '')); 
+        
         const conf = confirm('Are you sure you wish to proceed');
-        if (!conf) {
-            return false;
-        }
+        if (!conf) return false;
+
         $(currElem).html('processing...').attr('disabled', true);
+        
         self.theTransporter(currWrap, currElem, "", "removeCart");
     },
 
     productID: 0,
 
-    asyncFileExt: function (type) {
-        if (type === 1) {return '.php'};
+    asyncFileExt: function (type) { 
+        return type === 1 ? '.php' : '';
     },
 
-    asyncServiceRoot: function () {
-        const root = window.location.href.toLowerCase();
-        return root;
+    asyncServiceRoot: function() { 
+        return window.location.href.toLowerCase();
     },
 
-    preCheckout: function (currElem)
-    { 
+    preCheckout: function (currElem) { 
         const currWrap = $(currElem).parent();
         const shippingType = $(".demo_shipping-type").val();
         const productCost = parseFloat($(".demo_checkout-product-cost").html());
         const walletBalance = parseFloat($(".demo_checkout-wallet-balance").html());
         const shippingCost = parseFloat($(".demo_checkout-shipping-cost").html());
         const grossTotal = parseFloat($(".demo_checkout-gross-total").html());
-        if (shippingType === "") 
-        {
+        if (shippingType === "") {
             $('#demo_modal').modal();
             $("#demo_modal .modal-body").html('Please select your preferred mode of shipping');
             return false;
         }
-        else if (grossTotal > walletBalance)  
-        {
+        else if (grossTotal > walletBalance) {
             $('#demo_modal').modal();
             $("#demo_modal .modal-body").html('You do not have enough cash left in your wallet for this transaction!!!');
             return false;
@@ -62,13 +63,11 @@ var cart =
     },
  
 
-    checkout: function (currWrap, currElem, param3, action)
-    { 
+    checkout: function (currWrap, currElem, param3, action) { 
         this.theTransporter(currWrap, currElem, param3, action);
     },
 
-    updateShippingCost: function (currElem)
-    {
+    updateShippingCost: function (currElem) {
         var newGross = 0;
         const shippingType = $(currElem).val();
         const productCost = parseFloat($(".demo_checkout-product-cost").html()); 
@@ -92,8 +91,7 @@ var cart =
         } 
     },
 
-    theTransporter: function(currWrap, currElem, param3, action)
-    {
+    theTransporter: function(currWrap, currElem, param3, action) {
         const self = this; 
         $.ajax({ 
             dataType: 'json',
@@ -142,8 +140,7 @@ var cart =
 
 }
 
-$(document).ready(function()
-{
+$(document).ready(function() {
     $(".demo_cart-update-btn").click(function(){ cart.update(this)});
     $(".demo_cart-remove").click(function(){ cart.remove(this)}); 
     $(".demo_shipping-type").change(function(){ cart.updateShippingCost(this)}); 

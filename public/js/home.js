@@ -5,8 +5,8 @@ var home =
     ratingAlternator: function (currElem, altType) { 
         
         //Run a count to hold current state for this product rating
-        const self = this;
-        const currWrap = $(currElem).parent();
+        const [self, currWrap] = [this, $(currElem).parent()];
+    
         self.getStarred(currWrap); 
         
         switch (altType) {
@@ -34,8 +34,7 @@ var home =
         }                     
     },
 
-    getStarred: function(currWrap) 
-    {
+    getStarred: function(currWrap) {
         const self = this; 
         // Reset class property to [] -- pereadventure there werre previously stored elems
         self.currStarred = []; 
@@ -49,8 +48,8 @@ var home =
     productID: 1,
     clickedIndex: '',
 
-    asyncFileExt: function (type) {
-        if (type === 1) {return '.php'};
+    asyncFileExt: function (type) { 
+        return type === 1 ? '.php' : '';
     },
 
     asyncServiceRoot: function () {
@@ -58,8 +57,7 @@ var home =
         return root;
     },
 
-    addToCart: function (currBtn) 
-    {
+    addToCart: function (currBtn) {
         const self = this;
         $(currBtn).html('Updating cart...').attr('disabled', true);
         const currWrap = $(currBtn).parent();
@@ -68,8 +66,7 @@ var home =
     },
 
  
-    theTransporter: function(currWrap, currElem, action)
-    {
+    theTransporter: function(currWrap, currElem, action) {
         const self = this; 
         $.ajax({ 
             dataType: 'json',
@@ -121,8 +118,7 @@ var home =
 
 }
 
-$(document).ready(function()
-{
+$(document).ready(function() {
     $(".demo_list-rating-info i").mouseenter(function(){ home.ratingAlternator(this, "hover")});
     $(".demo_list-rating-info i").click(function(){ home.ratingAlternator(this, "click")});
     $(".demo_list-rating-info i").mouseleave(function(){ home.ratingAlternator(this, "exit");});
