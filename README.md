@@ -1,5 +1,4 @@
 ![Logo](public/img/logo.png)
-
 A Basic implementation of the MVC Design Pattern with PHP.
 This is only a boilerplate built from scratch, not intended for production use. 
 For rea life usage, use a more structured framework like Laravel or Symfony.  But this should give you an idea on how each layers of the pattern can be connected to achieve a common goal. 
