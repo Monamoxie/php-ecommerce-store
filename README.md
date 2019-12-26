@@ -7,7 +7,7 @@ For rea life usage, use a more structured framework like Laravel or Symfony.  Bu
 # Technology Stack 
 * PHP (v7.0+) (Vanilla)
 * MySQL 
-* Javascript (Vanilla)
+* Javascript (JQuery Library)
  
 
 #  Set Up Guide
